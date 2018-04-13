@@ -1,18 +1,12 @@
 # d3-brush
 
-刷取交互指在一维或二维空间内使用手势,比如点击然后拖拽鼠标拾取一块区域范围的操作.刷取操作经常用来选取一些离散的元素,比如散点图中的点或者桌面上的文件等等.它也可以被用来对感兴趣的区域进行放大操作,或者选择连续区域进行[交叉过滤数据](http://square.github.io/crossfilter/):
+刷取交互指在一维或二维空间内使用手势,比如点击然后拖拽鼠标拾取一块区域范围的操作.刷取操作经常用来选取一些离散的元素,比如散点图中的点或者桌面上的文件等等.它也可以被用来对感兴趣的区域进行放大操作,或者选择连续区域进行 [cross-filtering data(交叉过滤数据)](http://square.github.io/crossfilter/):
 
 [<img alt="Mona Lisa Histogram" src="https://raw.githubusercontent.com/d3/d3-brush/master/img/mona-lisa.jpg" width="420" height="219">](http://bl.ocks.org/mbostock/0d20834e3d5a46138752f86b9b79727e)
 
-d3-brush模块的实现基于注册于[SVG](https://www.w3.org/TR/SVG/)上的鼠标和触摸操作.
+d3-brush模块的实现基于注册于 [SVG](https://www.w3.org/TR/SVG/) 上的鼠标和触摸操作. 点击并且拖拽选区会对选区进行位置调整。点击并且拖拽选区的 `handles`(把手) 会调整对应的选区的边。点击并且拖拽隐藏的 `overlay` 会创建一个新的选区，按住 `META (⌘)` 键并点击可刷取范围内的点也会达到这种效果. 按住ALT (⌥)并移动鼠标时会已鼠标刚开始按下的点为中心调整已选中区域的大小,调整已选中区域大小的过程中按住 `SPACE` 时会将调整大小变为调整已选中区间位置,刷取过程中按住 `shift` 会固定刷取的方向.
 
-- 点击或者拖拽选择区域把柄可以调整对应的侧边位置,并改变已选中区域的大小形状.
-- 点击并拖拽隐形的覆盖层可以移动整个已选中的范围,只改变已选中区域的位置,不改变大小和形状.按住META (⌘)键并点击可刷取范围内的点也会达到这种效果.
-- 按住ALT (⌥)并移动鼠标时会已鼠标刚开始按下的点为中心调整已选中区域的大小
-- 调整已选中区域大小的过程中按住SPACE时会将调整大小变为调整已选中区间位置
-- 刷取过程中按住shift会固定刷取的方向
-
-刷取操作也支持编程控制,例如通过监听[*end* events](#brush-events)事件,然后对选中区间通过[*brush*.move](#brush_move)进行微调：
+刷取操作也支持编程控制, 例如通过监听 [*end* events](#brush-events) 事件, 然后对选中区间通过 [*brush*.move](#brush_move) 进行微调：
 
 [<img alt="Brush Snapping" src="https://raw.githubusercontent.com/d3/d3-brush/master/img/snapping.png" width="420" height="219">](http://bl.ocks.org/mbostock/6232537)
 
@@ -22,12 +16,7 @@ d3-brush模块的实现基于注册于[SVG](https://www.w3.org/TR/SVG/)上的鼠
 
 ## Installing
 
-- npm： `npm install d3-brush`
-- 下载[最新版](https://github.com/d3/d3-brush/releases/latest)
-- 直接从[d3js.org](https://d3js.org)作为一个[标准的库](https://d3js.org/d3-brush.v1.min.js)引用
-- 作为[D3 4.0](https://github.com/d3/d3)的一部分使用
-
-安装后会对全局暴露一个`d3`全局变量：
+使用 `NPM` 安装：`npm install d3-brush`. 还可以下载 [最新版](https://github.com/d3/d3-brush/releases/latest)，此外还可以直接从 [d3js.org](https://d3js.org) 作为一个 [标准的库](https://d3js.org/d3-brush.v1.min.js) 或作为 [D3 4.0](https://github.com/d3/d3)的一部分直接载入。支持 `AMD`，`CommonJS` 以及基本的标签引入形式，如果使用标签直接引入会暴露 `d3` 全局变量：
 
 ```js
 <script src="https://d3js.org/d3-color.v1.min.js"></script>
