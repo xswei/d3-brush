@@ -67,7 +67,7 @@ svg.append("g")
 group.on(".brush", null);
 ```
 
-刷取操作会创建一些必要的SVG元素来显示刷取交互显示元素.你可以添加,移除或者修改这些元素的外观.你也可以将样式文件应用到这些元素上.二维刷取所生成的元素结构如下:
+刷取操作会创建一些必要的SVG元素来显示刷取交互显示元素. 你可以添加, 移除或者修改这些元素的外观. 也可以将样式文件应用到这些元素上.二维刷取所生成的元素结构如下:
 
 ```js
 <g class="brush" fill="none" pointer-events="all" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
